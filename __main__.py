@@ -59,7 +59,10 @@ bucket = aws.s3.Bucket("bucket",
     })
 
 s3bucketname = pulumi.export('s3bucket', bucket.bucket);
+<<<<<<< HEAD
 s3bucketarn = pulumi.export('s3bucketarn', bucket.arn);
+=======
+>>>>>>> 0ec2c2ef109749b986e48014973ef7f1944ad980
 
 ### Lambda
 
@@ -73,6 +76,7 @@ iam_for_lambda = aws.iam.Role("iamForLambda", assume_role_policy="""{
       },
       "Effect": "Allow",
       "Sid": ""
+<<<<<<< HEAD
     },
     {
       "Action": {
@@ -87,11 +91,16 @@ iam_for_lambda = aws.iam.Role("iamForLambda", assume_role_policy="""{
 	"*"
       ]
     }
+=======
+>>>>>>> 0ec2c2ef109749b986e48014973ef7f1944ad980
     }
   ]
 }
 """)
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0ec2c2ef109749b986e48014973ef7f1944ad980
 test_lambda = aws.lambda_.Function("testLambda",
     code=pulumi.FileArchive("lambda_function_payload.zip"),
     role=iam_for_lambda.arn,
